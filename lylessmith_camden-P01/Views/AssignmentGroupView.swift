@@ -12,20 +12,21 @@ struct AssignmentGroupView: View {
 
     var body: some View {
         
-        List(Array(viewModel.courseResults.assignmentGroups.values)) { group in
-            HStack {
-                Text(group.name)
-                Spacer()
-                TextField("Weight: ", value: $viewModel.courseResults.assignmentGroups[group.id].weight, format: FloatingPointFormatStyle())
-                    .textFieldStyle(.squareBorder)
+        VStack {
+            List(Array($viewModel.courseResults.assignmentGroups.values)) { $group in
+                HStack {
+                    Text(group.name)
+                    Spacer()
+                    TextField("Weight: ", value: $group.weight, format: FloatingPointFormatStyle())
+                        .textFieldStyle(.squareBorder)
+                }
+                
             }
-            
+            if viewModel.totalWeight > 100.0 {
+                Text("WEIGHT IS GREATER THAN 100").foregroundStyle(.red)
+            }
         }
         
-
-        if viewModel.totalWeight > 100.0 {
-            Text("WEIGHT IS GREATER THAN 100").foregroundStyle(.red)
-        }
         
     }
 }

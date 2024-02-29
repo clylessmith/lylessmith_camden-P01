@@ -21,6 +21,9 @@ class CourseResults: ObservableObject {
     var courseStats: CourseStats = CourseStats()
     
     func calcOverallScore() {
+        for stu in students {
+            students[stu.key]?.overAllScore = 0.0
+        }
         for assignmentGroup in assignmentGroups {
             var totalPointsPossible = 0.0
             

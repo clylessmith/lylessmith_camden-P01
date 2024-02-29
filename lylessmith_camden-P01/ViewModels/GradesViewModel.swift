@@ -11,14 +11,14 @@ import SwiftUI
 class GradesViewModel: ObservableObject {
     var studentsArray:[Student] = []
 
-    @Published var courseResults = CourseResults()
-    
-    init(courseResults: CourseResults) {
-        self.courseResults = courseResults
-        self.totalWeight = 0.0
-        
-        for group in courseResults.assignmentGroups {
-            self.totalWeight += group.value.weight
+    @Published var courseResults = CourseResults() {
+        didSet {
+            self.totalWeight = 0.0
+            for group in courseResults.assignmentGroups {
+                self.totalWeight += group.value.weight
+            }
+            self.courseResults.calcOverallScore()
+            self.courseResults.calculateStats()
         }
     }
     
