@@ -24,7 +24,7 @@ struct ContentView: View {
                     .frame(minHeight: 150.0)
                     .padding(.horizontal)
                 Divider()
-                Text("Assignment Groups")
+                AssignmentGroupView(assignmentGroups: $gradesViewModel.courseResults.assignmentGroups)
             }
             Divider()
             Text("Course Stats")

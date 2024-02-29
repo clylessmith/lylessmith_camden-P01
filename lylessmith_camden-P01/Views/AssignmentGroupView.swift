@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct AssignmentGroupView: View {
-    @ObservedObject var viewModel: GradesViewModel
+    @Binding var assignmentGroups: [AssignmentGroup.ID : AssignmentGroup]
+    @State var totalWeight:Double = 0.0
 
     var body: some View {
-        List(Array(viewModel.courseResults.assignmentGroups.values)) { $nextGroup in
+        
+        List(Array($assignmentGroups.values)) { $group in
             HStack {
-                Text(nextGroup.name)
+                Text(group.name)
                 Spacer()
-                TextField("Weight: ", value: $nextGroup.weight, format: FloatingPointFormatStyle())
+                TextField("Weight: ", value: $group.weight, format: FloatingPointFormatStyle())
                     .textFieldStyle(.squareBorder)
             }
             
         }
+        
+//        ForEach(assignmentGroups) { assignmentGroup in
+//            totalWeight += assignmentGroup.weight
+//        }
+//        if totalWeight > 100.0 {
+//            Text("WEIGHT IS GREATER THAN 100").foregroundStyle(.red)
+//        }
+        
     }
 }
 
