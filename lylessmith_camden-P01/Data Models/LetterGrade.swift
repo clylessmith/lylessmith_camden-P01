@@ -7,7 +7,8 @@
 
 
 /// Letter Grade for the student.
-enum LetterGrade: String {
+enum LetterGrade: String, CaseIterable, Hashable {
+    
     case A          = "A"
     case A_minus    = "A-"
     case B_plus     = "B+"

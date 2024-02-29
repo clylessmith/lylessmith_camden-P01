@@ -9,12 +9,21 @@ import Foundation
 import SwiftUI
 
 class GradesViewModel: ObservableObject {
+    var studentsArray:[Student] = []
+
+    @Published var courseResults = CourseResults()
     
-    var courseResults = CourseResults()
+    init(courseResults: CourseResults) {
+        self.courseResults = courseResults
+        self.totalWeight = 0.0
+        
+        for group in courseResults.assignmentGroups {
+            self.totalWeight += group.value.weight
+        }
+    }
     
     @Published var url: URL? = nil {
         didSet {
-            // TODO: Create and call parseFile() to update state
             print("New URL: \(String(describing: url))")
             do {
                 let newData = try FileParser.parseData(atURL: url)
@@ -23,6 +32,11 @@ class GradesViewModel: ObservableObject {
                 self.courseResults.assignmentGroups = newData.0
                 
                 self.courseResults.calcOverallScore()
+                self.courseResults.calculateStats()
+                
+                for group in courseResults.assignmentGroups {
+                    totalWeight += group.value.weight
+                }
                 
             } catch  {
                 print(error)
@@ -38,13 +52,15 @@ class GradesViewModel: ObservableObject {
             }
         }
     
+    @Published var totalWeight = 0.0
+    
     init() {
         setNotifications()
         updateState()
     }
     
     func updateState() {
-        //self.courseResults.students = Array(courseResults.students.values).sorted(using: sortOrder)
+        self.studentsArray = Array(courseResults.students.values).sorted(using: sortOrder)
     }
     
     private func setNotifications() {
@@ -57,5 +73,6 @@ class GradesViewModel: ObservableObject {
     private func studentStateDidChange(_ notification: Notification) {
         updateState()
     }
+
 }
 

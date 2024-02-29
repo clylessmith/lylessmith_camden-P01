@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030A25C42B903C2200454587 /* CourseStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A25C32B903C2200454587 /* CourseStatsView.swift */; };
+		030A25C62B903CCD00454587 /* CourseStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A25C52B903CCD00454587 /* CourseStats.swift */; };
 		032771AA2B8EE87B0087B7C6 /* lylessmith_camden_P01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032771A92B8EE87B0087B7C6 /* lylessmith_camden_P01App.swift */; };
 		032771AC2B8EE87B0087B7C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032771AB2B8EE87B0087B7C6 /* ContentView.swift */; };
 		032771AE2B8EE87C0087B7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032771AD2B8EE87C0087B7C6 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030A25C32B903C2200454587 /* CourseStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStatsView.swift; sourceTree = "<group>"; };
+		030A25C52B903CCD00454587 /* CourseStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseStats.swift; sourceTree = "<group>"; };
 		032771A62B8EE87B0087B7C6 /* lylessmith_camden-P01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lylessmith_camden-P01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		032771A92B8EE87B0087B7C6 /* lylessmith_camden_P01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lylessmith_camden_P01App.swift; sourceTree = "<group>"; };
 		032771AB2B8EE87B0087B7C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				032771AB2B8EE87B0087B7C6 /* ContentView.swift */,
 				032771CC2B8EE9D10087B7C6 /* StudentTableView.swift */,
 				03F34AA62B901E040081982D /* AssignmentGroupView.swift */,
+				030A25C32B903C2200454587 /* CourseStatsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		032771BA2B8EE89E0087B7C6 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
+				030A25C52B903CCD00454587 /* CourseStats.swift */,
 				032771D42B8EF4680087B7C6 /* FileParser.swift */,
 				032771BC2B8EE8BD0087B7C6 /* Assignment.swift */,
 				032771BE2B8EE8BD0087B7C6 /* AssignmentGroup.swift */,
@@ -214,6 +220,7 @@
 				032771D52B8EF4680087B7C6 /* FileParser.swift in Sources */,
 				032771C22B8EE8BD0087B7C6 /* Assignment.swift in Sources */,
 				032771D32B8EF2550087B7C6 /* CSVURLDropDelegate.swift in Sources */,
+				030A25C62B903CCD00454587 /* CourseStats.swift in Sources */,
 				032771CF2B8EEAD10087B7C6 /* GradesViewModel.swift in Sources */,
 				032771C62B8EE8BD0087B7C6 /* AssignmentScore.swift in Sources */,
 				032771D12B8EF24D0087B7C6 /* DropFileView.swift in Sources */,
@@ -221,6 +228,7 @@
 				032771AC2B8EE87B0087B7C6 /* ContentView.swift in Sources */,
 				032771AA2B8EE87B0087B7C6 /* lylessmith_camden_P01App.swift in Sources */,
 				03F34AA72B901E040081982D /* AssignmentGroupView.swift in Sources */,
+				030A25C42B903C2200454587 /* CourseStatsView.swift in Sources */,
 				032771C32B8EE8BD0087B7C6 /* LetterGrade.swift in Sources */,
 				032771C52B8EE8BD0087B7C6 /* CourseResults.swift in Sources */,
 				032771CA2B8EE8D90087B7C6 /* NotificationName_Extensions.swift in Sources */,

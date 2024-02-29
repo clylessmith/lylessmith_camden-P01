@@ -13,21 +13,19 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
-            Divider()
             HStack {
                 DropFileView(url: $gradesViewModel.url)
-                    .frame(minHeight: 50.0)
+                    .frame(maxWidth: 100.0, minHeight: 50.0)
                     .padding(.horizontal)
-                Divider()
-                StudentTableView(viewModel: gradesViewModel)
-                    .frame(minHeight: 150.0)
+                StudentTableView(viewModel: gradesViewModel, sortOrder: $gradesViewModel.sortOrder)
+                    .frame(minWidth: 450.0, minHeight: 150.0)
+                    .padding()
+                AssignmentGroupView()
+                    .frame(maxWidth: 300.0)
                     .padding(.horizontal)
-                Divider()
-                AssignmentGroupView(assignmentGroups: $gradesViewModel.courseResults.assignmentGroups)
             }
             Divider()
-            Text("Course Stats")
+            CourseStatsView(courseStats: $gradesViewModel.courseResults.courseStats)
                 .frame(minWidth: 100.0, minHeight: 50.0)
                 .padding(.horizontal)
         }

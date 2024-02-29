@@ -7,13 +7,13 @@
 
 import Foundation
 
-class AssignmentGroup: Identifiable {
+class AssignmentGroup: Identifiable, ObservableObject {
     
     let id = AssignmentGroup.ID()
     
-    var name: String
+    @Published var name: String
     
-    var weight: Double
+    @Published var weight: Double
     
     var assignments: [Assignment.ID : Assignment] = [:]
     

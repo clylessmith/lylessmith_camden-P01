@@ -10,9 +10,10 @@ import SwiftUI
 struct StudentTableView: View {
     
     @ObservedObject var viewModel: GradesViewModel
+    @Binding var sortOrder: [KeyPathComparator<Student>]
         
     var body: some View {
-        Table(Array(viewModel.courseResults.students.values)) {
+        Table(Array(viewModel.courseResults.students.values), sortOrder: $sortOrder) {
             TableColumn("Student Name", value: \.name)
             TableColumn("Student ID", value: \.studentID)
             TableColumn("Student Score") {
